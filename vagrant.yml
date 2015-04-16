@@ -1,0 +1,35 @@
+boxes:
+  puppetlabs/centos-6.5-64-nocm: "puppetlabs/centos-6.5-64-nocm"
+nodes:
+  master-os:
+    hostname: master.os.vagrant.vm
+    box: puppetlabs/centos-6.5-64-nocm
+    memory: 4096
+    cpus: 1
+    networks:
+      - public_network:
+          ip: 192.168.1.25
+    provisioners:
+      - shell:
+          path: provision.sh
+          arguments:
+            - value: master
+    synced_folders:
+      - host: .
+        guest: /vagrant
+  agent-os:
+    hostname: agent1.os.vagrant.vm
+    box: puppetlabs/centos-6.5-64-nocm
+    memory: 512
+    cpus: 1
+    networks:
+      - public_network:
+          ip: 192.168.1.26
+    provisioners:
+      - shell:
+          path: provision.sh
+          arguments:
+            - value: agent
+    synced_folders:
+      - host: .
+        guest: /vagrant
