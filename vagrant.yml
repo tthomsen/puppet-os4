@@ -1,8 +1,8 @@
 boxes:
   puppetlabs/centos-6.5-64-nocm: "puppetlabs/centos-6.5-64-nocm"
 nodes:
-  master-os:
-    hostname: master.os.vagrant.vm
+  master-os4:
+    hostname: master.os4.vagrant.vm
     box: puppetlabs/centos-6.5-64-nocm
     memory: 4096
     cpus: 1
@@ -17,8 +17,8 @@ nodes:
     synced_folders:
       - host: .
         guest: /vagrant
-  agent-os:
-    hostname: agent1.os.vagrant.vm
+  agent-os4:
+    hostname: agent1.os4.vagrant.vm
     box: puppetlabs/centos-6.5-64-nocm
     memory: 512
     cpus: 1
